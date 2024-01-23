@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stereo Music</title>
+    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible&display=swap" rel="stylesheet">
+   
+<!-- vw :  Viewport width (vw) is particularly useful for creating responsive designs because it allows you to size elements relative to the width of the viewport (the visible portion of a web page on the screen). -->
+
+<!-- creating middle  -->
+
+<style>
+
+
+    body{
+        background-color: orange;
+        
+        
+
+    }
+    *{
+        margin:0;
+        padding:0;
+    }
+    nav{
+        font-family: 'Atkinson Hyperlegible', sans-serif;
+
+    }
+    nav ul{
+        display: flex;
+        list-style-type: none;
+        height: 89px;
+        background-color: black;
+        color:orange;
+        align-items: center;
+        
+    }
+    h1{
+        color: rgb(255, 123, 0);
+        margin-left: 23px;
+        
+    }
+
+    
+    .logo img{
+        width:90px
+        
+    }
+    .logo{
+        display: flex;
+        align-items: center;
+        font-weight: bolder;
+        font-size: 1.3rem;
+        padding: 0 8px;
+    }
+    nav ul li{
+        padding: 0 12px;
+    }
+    .navigation{
+        font-size: 20px;
+    }
+    .bottom{
+        position: sticky;
+        height: 100px;
+        background-color: black;
+        color: white;
+        bottom:0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+    }
+    .volumeBar{
+    display: flex;
+    justify-content: center; 
+    
+    
+   }
+   #volume{
+    width: 50%;
+    height: 5px;
+    align-self: center;
+    display: flex;
+    cursor: pointer;
+    
+   }
+   
+    #volume:hover{
+        opacity: 1.0; 
+    }
+
+    i.fa-volume-down,
+    i.fa-volume-up{
+        padding: 10px;
+        cursor:pointer
+    }
+    .icons {
+        margin-top: 0px;
+    }
+    .icons i{
+        cursor: pointer;
+        margin: 0px;
+    }
+    .box{
+        min-height: 75vh;
+        background-color: black;
+        color: white;
+        font-family: 'Atkinson Hyperlegible', sans-serif;
+        display: flex;
+        width: 70%;
+        margin:23px auto ;
+        padding: 20px;
+        border-radius:12px;
+        background-image:url('covers/bg image.jpg');
+        background-repeat: no-repeat;
+    
+        
+       
+
+    }
+    #playbar{
+        width: 80vw; 
+        cursor:pointer;
+       
+    
+     }
+    .songItem{
+        text-align: center;
+        display:flex;
+        
+        background-color: white;
+        height:50px;
+        color:black;
+        margin:12px 0;
+        margin-left: 15px;
+        justify-content: space-between;
+        align-items: center;
+        border-radius:34px;
+        
+
+    }
+    .songItem img{
+        width:40px;
+        margin:0 23px;
+        border-radius: 34px;
+    }
+    .songItembox{
+    margin-top: 20px;}
+
+    .timestamp{
+        margin:0 23px;
+        align-items: center;
+    }
+    .timestamp i{
+        cursor: pointer;
+    }
+    .songinfo {
+        position:absolute;
+        left:6vw;
+        font-family: 'Atkinson Hyperlegible', sans-serif;
+    }
+    .songinfo img {
+       opacity: 0;
+       transition: opacity 0.3s ease-in;
+    } 
+    
+ </style>
+</head>
+
+<body>
+
+    <nav>
+        <ul>
+            <li class="logo"><img src="covers/stereo logo.png">Stereo</li>
+            <li class="right">Home</li>
+        
+        </ul>
+    </nav>
+  
+    <div class="box">
+        <div class="songList">
+            <h1>Workout Songs</h1>
+            <div class="songItembox">
+                <div class="songItem"> 
+                    <img  alt="1">
+                    <span class="songName" >Believer-Imagine Dragons</span>
+                    <span class="songlistplay"><span class="timestamp">3:24<i id="0" class="far songItemplay fa-play-circle"></i></span></span>
+                </div>
+                <div class="songItem"> 
+                    <img  alt="1">
+                    <span class="songName" >Let Me Love You-Justin Biber</span>
+                    <span class="songlistplay"><span class="timestamp">3:25<i id="1" class="far songItemplay fa-play-circle"></i></span></span>
+                </div>
+                <div class="songItem"> 
+                    <img alt="1">
+                    <span class="songName">Challa (Main Lad Jaana)</span>
+                    <span class="songlistplay"><span class="timestamp">3:28<i id="2" class="far songItemplay fa-play-circle"></i></span></span>
+                </div>
+                <div class="songItem"> 
+                    <img  alt="1">
+                    <span class="songName">On My Way</span>
+                    <span class="songlistplay"><span class="timestamp">3:13<i id="3" class="far songItemplay fa-play-circle"></i></span></span>
+                </div>
+                <div class="songItem"> 
+                    <img  alt="1">
+                    <span class="songName">Get Ready To Fight</span>
+                    <span class="songlistplay"><span class="timestamp">3:24<i id="4"  class="far songItemplay fa-play-circle"></i></span></span>
+                </div>
+                <div class="songItem"> 
+                    <img  alt="1">
+                    <span class="songName">Brothers Anthem</span>
+                    <span class="songlistplay"><span class="timestamp">5:54<i id="5" class="far songItemplay fa-play-circle"></i></span></span>
+                </div>
+                <div class="songItem"> 
+                    <img  alt="1">
+                    <span class="songName">Thunder</span>
+                    <span class="songlistplay"><span class="timestamp">3:24<i id="6" class="far songItemplay fa-play-circle"></i></span></span>
+                </div>
+                 
+                <div class="songItem"> 
+                    <img alt="1">
+                    <span class="songName">Zinda</span>
+                    <span class="songlistplay"><span class="timestamp">3:30<i id="7" class="far songItemplay fa-play-circle"></i></span></span>
+                </div>
+                 
+                <div class="songItem"> 
+                    <img  alt="1">
+                    <span class="songName">Sultan</span>
+                    <span class="songlistplay"><span class="timestamp">3:24<i id="8"   class="far songItemplay fa-play-circle"></i></span></span>
+                </div>
+                 
+                <div class="songItem"> 
+                    <img  alt="1">
+                    <span class="songName">Kar Har Maidan</span>
+                    <span class="songlistplay"><span class="timestamp">3:31<i id="9" class="far songItemplay fa-play-circle"></i></span></span>
+                </div>
+                <div class="songItem"> 
+                    <img  alt="1">
+                    <span class="songName">Khalibali</span>
+                    <span class="songlistplay"><span class="timestamp">4:19<i id="10" class="far songItemplay fa-play-circle"></i></span></span>
+                </div>
+                <div class="songItem"> 
+                    <img  alt="1">
+                    <span class="songName">Apna Time Ayega</span>
+                    <span class="songlistplay"><span class="timestamp">2:20<i id="11" class="far songItemplay fa-play-circle"></i></span></span>
+                </div>
+                 
+            </div>
+        </div>
+        <div class="song banner"></div>
+    </div>
+        
+    <div class="bottom">
+       
+        <input type="range" name="range" id="playbar" min="0" max="100" value="0">
+        <!-- type="range": Specifies that this input is a range slider,min="0": Sets the minimum value of the range slider to 0.
+max="100": Sets the maximum value of the range slider to 100. -->
+        
+
+        <!-- font awsome icon -->
+        <!-- 10import fontawsome from website then bring symbols in i tag according to given class and id -->
+        <div class="icons">
+
+            <i class="fas fa-2x fa-step-backward" id="previous"></i>
+            <i class="far fa-2x fa-play-circle" id="masterPlay"></i>
+            <i class="fas fa-2x fa-step-forward" id="next"></i>
+        </div>
+        <div class="volumeBar">
+            <i class="fa fa-volume-down"></i>
+            <input type="range" name="range" id="volume" min="1" max="100" value="99" onchange="setVolume()">
+            <i class="fa fa-volume-up"></i>
+            
+
+        </div>
+
+        
+        <div class="songinfo">
+            <img src="playing gif guitar.gif" width="34px"  id="gif" ><span id="masterSongName">Believer-Imagine Dragons</span>
+        
+        </div>
+    </div> 
+    
+    <script src="https://kit.fontawesome.com/6bc6130a82.js" crossorigin="anonymous"></script>
+    <script src="script.js" ></script>   
+</body>
+</html>

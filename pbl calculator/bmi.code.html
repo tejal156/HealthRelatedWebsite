@@ -1,0 +1,138 @@
+<!DOCTYPEhtml>
+<html lang="en">
+<head>
+    <meta charset ="UTF-8">
+    <meta http-equiv="X-UA-Compatible"content="IE=edge">
+    <meta name="viewport"content="width=device-width, initial-scale=1.0">
+    <title>BMI calculator</title>
+    
+</head>
+<style media ="screen">
+body{
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-family: sans-serif;
+    height: 100vh;
+    background-image: linear-gradient(120deg,#ff6b6b,#5f27cd);
+    background-repeat: no-repeat;  
+
+}
+div{
+    width: 500px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-color: #fff;
+    transform: translate(-50%,-50%);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 1px1px20px#ee5253;
+}
+h2{
+    font-align: left;
+    font-weight: 600;
+}
+.text{
+    text-align: left;
+    margin-left: 150px;
+}
+#w,#h{
+    color: #222f3e;
+    text-align: left;
+    font-size: 20px;
+    font-weight: 200;
+    outline: none;
+    border: none;
+    background: none;
+    border-bottom: 1pxsolid#341f97;
+    width: 200px;
+}
+#w:focus,#h:focus{
+    border-bottom: 2pxsolid#341f97;
+    width: 300px;
+    transition: 0.5s;
+}
+#result{
+    color: #341f97;
+}
+#btn{
+    font-family: inherit;
+    margin-top: 10px;
+    border: none;
+    color: #fff;
+    background-image: linear-gradient(120deg,#ff6b6b,#5f27cd);
+    width: 159px;
+    padding: 10px;
+    border-radius: 30px;
+    outline: none;
+    cursor: pointer;
+}
+#btn:hover{
+    box-shadow: 1px1px10px#341f97;
+}
+#info{
+    font-size: 12px;
+    font-family: inherit;
+
+}
+#uw{
+    color: rgb(122, 122, 10);
+}
+#nw{
+    color: rgb(1, 126, 1);
+}
+#ow{
+    color: rgb(234, 69, 69);
+}
+#o{
+    color: red;
+}
+
+</style>
+<script type="text/javascript">
+    functionBMI()
+    {
+        varh=document.getElementById('h').value;
+        varw=document.getElementById('w').value;
+        varbmi=w/(h/100*h/100);
+        varbmio=(bmi.toFixed(2))
+
+        document.getElementById("result").innerHTML="Your BMI is " +bmio;
+        if (bmi<18.5) result.innerHTML =
+            `Your BMI is  <span>${bmi}</span><p id="uw">Under weight</p>`;
+  
+        elseif (bmi>= 18.6&&bmi<25) 
+            result.innerHTML = 
+                `Your BMI is  <span>${bmi}</span><p id="nw">Normal weight</p>`;
+  
+        elseif (bmi>=25&&bmi<=30) 
+            result.innerHTML = 
+                `Your BMI is  <span>${bmi}</span><p id="ow">Over weight</p>`;
+        else
+        {
+            result.innerHTML = 
+                `Your BMI is  <span>${bmi}</span><p id="o">Obese</p>`;
+        }
+    }
+</script>
+
+<body>
+    <div>
+        <h2>BMI Calculator</h2>
+        <p class="text">Height</p>
+        <input type="text"id="h">
+        <p class="text">Weight</p>
+        <input type="text"id="w">
+        <p id="result"></p>
+        <button id="btn"onclick="BMI()">Calculate</button>
+        <p id="info">Please enter height(cm) and weight(kg)</p>
+
+    </div>
+
+    
+    
+</body>
+
+</html>
+

@@ -1,0 +1,136 @@
+<!DOCTYPEhtml>
+<htmllang="en">
+<head>
+    <metacharset="UTF-8">
+    <metahttp-equiv="X-UA-Compatible"content="IE=edge">
+    <metaname="viewport"content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-family: sans-serif;
+    height: 100vh;
+    background-image: linear-gradient(120deg,#ff6b6b,#5f27cd);
+    background-repeat: no-repeat;  
+
+  }
+  div{
+    width: 500px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-color: #fff;
+    transform: translate(-50%,-50%);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 1px1px20px#ee5253;
+}
+#btn{
+    font-family: inherit;
+    margin-top: 10px;
+    border: none;
+    color: #fff;
+    background-image: linear-gradient(120deg,#ff6b6b,#5f27cd);
+    width: 159px;
+    padding: 10px;
+    border-radius: 30px;
+    outline: none;
+    cursor: pointer;
+}
+#btn:hover{
+    box-shadow: 1px1px10px#341f97;
+}
+
+    #outer{width:90%;
+        max-width:600px;
+        background:#fff;
+        margin:0auto
+    }
+    #cover{border:2pxsolid#111;
+           padding:15px0
+    }
+    .main{table-layout:fixed;
+        width:94%;border:0;
+        text-align:left;
+        border-collapse:collapse;
+        margin:0auto
+    }
+
+    .maintd{padding:08px;
+             vertical-align:middle;
+             border:0;
+    }
+    .maininput{width:100%;
+        border:1pxsolid#ccc;
+        margin:2px0;
+        padding:02%;
+        height:22px;
+        text-align:right
+    }
+    .ac{text-align:center
+    }
+    .b{font-weight:bold
+    }
+    .mainselect{width:100%;
+                border:1pxsolid#ccc;
+                margin:2px0;
+                background:#fff;
+                height:22px}
+    .w50{width:50%}
+    .mainbutton{width:100%;
+                 font-weight:bold;
+                 margin:3px0
+                }
+    .w60{width:60%}
+    .w40{width:40%}
+    h2{
+        font-style: oblique;
+   }
+
+    
+    </style>
+<script>
+    var$=function( id )
+       {returndocument.getElementById(id)
+       };
+    functionmsystem()
+    {if( $('msw').value=='metric'){ $('thw').innerHTML=' (Cms)'}
+    else{ $('thw').innerHTML=' (inches)'}}
+    functionbweight ()
+    {varms= $('msw').value;
+    varsex= $('sw').value;
+    varheight= $('hw').value;
+    if(height==null || height.length==0 ){ $('ibw').value='Pl. enter data.'}
+    else{ $('ibw').value=''}
+    if(ms=='metric'&&height>0&&sex=='m'){ $('ibw').value=Math.round(56.2*1+(height*.39-152.4*.39)*1.41)*1+' Kgs'}
+    elseif(ms=='metric'&&height>0&&sex=='f'){ $('ibw').value=Math.round(53.1*1+(height*.39-152.4*.39)*1.36)*1+' Kgs'}
+    elseif(ms=='us'&&height>0&&sex=='m'){ $('ibw').value=Math.round(56.2*2.20462+(height*1-60)*1.41*2.20462)*1+' lbs'}
+    elseif(ms=='us'&&height>0&&sex=='f'){ $('ibw').value=Math.round(53.1*2.20462+(height*1-60)*1.36*2.20462)*1+' lbs'}
+    if(ms=='metric'&&height>0){ $('ibw1').value=Math.round(18.5*(height*height/10000))+' Kgs-' +Math.round(25*(height*height/10000))+' Kgs'}
+    elseif(ms=='us'&&height>0){ $('ibw1').value=Math.round(18.5*(height*height)/703)+' lbs-' +Math.round(25*(height*height)/703)+' lbs'}}
+    
+    </script>
+    
+<body>
+ 
+    <divid=outer>
+        <divclass='ac b'>Ideal Body Weight Calculator</div>
+        <divid=cover>
+            <h2>Ideal body weight Calculator</h2>
+        <formname=iw>
+            <tableclass=main><colclass=w60><colclass=w40><tr><td>Measuring System<td>
+                <selectid=mswonchange=msystem();>
+                <optionvalue=metric>Metric (Kgs, Cms)<optionvalue=us>US (lbs, inches)
+                </select>
+                <tr><td>Sex<td><selectid=sw>
+                    <optionvalue=m>Male<optionvalue=f>Female
+                    </select><tr><td>Height <spanid=thw>(Cms)</span><td><inputid=hw><tr><td><buttontype=resetid="btn">Reset</button><td><buttontype=buttonid="btn"onclick='bweight();'>Submit</button><tr><td>As per D R Miller Formula<td><inputid=ibwclass=op><tr><td>As per WHO recommendations<td><inputid=ibw1class=op><tr><tdcolspan=2class='ac b'>This Calculator is suitable only for Adults over 18 years of age.</table></form></div></div>
+
+    
+</body>
+</html>
+
+
